@@ -82,7 +82,7 @@ public class ListViewDataActivity extends AppCompatActivity {
             String country =  eventData.getString("country");
             String city = eventData.getString("city");
             String imgUrl = eventData.getString("imgurl");
-            
+
             if(imgUrl == null || imgUrl.isEmpty())
                 imgUrl="https://ide-global.com/images/logo.png";
 

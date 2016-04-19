@@ -1,4 +1,4 @@
 # restapp
 
 
-This is a simple app which demostrate the use to OAuth 2.0 with in #laravel with Android 
+This is a simple app which demonstrate the use of OAuth 2.0 (laravel) and  Android
