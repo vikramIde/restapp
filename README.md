@@ -41,3 +41,7 @@ event_list_view_layout.xml
 
 2. Assync  http://loopj.com/android-async-http/
 
+#ANDROID VERSION
+
+Android Studio 1.5
+
