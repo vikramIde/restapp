@@ -8,6 +8,7 @@ import android.view.Menu;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -21,6 +22,7 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.List;
+import com.squareup.picasso.Picasso;
 
 import cz.msebera.android.httpclient.Header;
 
@@ -79,12 +81,17 @@ public class ListViewDataActivity extends AppCompatActivity {
             String date = eventData.getString("date");
             String country =  eventData.getString("country");
             String city = eventData.getString("city");
+            String imgUrl = eventData.getString("imgurl");
+
+            if(imgUrl == null || imgUrl.isEmpty())
+                imgUrl="https://ide-global.com/images/logo.png";
 
             Event eventObject = new Event();
             eventObject.setEvent(event);
             eventObject.setDate(date);
             eventObject.setCity(city);
             eventObject.setCountry(country);
+            eventObject.setImageurl(imgUrl);
             eventList.add(eventObject);
         }
     }
@@ -113,7 +120,14 @@ public class ListViewDataActivity extends AppCompatActivity {
             TextView date = (TextView) view.findViewById(R.id.date);
             TextView city = (TextView) view.findViewById(R.id.city);
             TextView country = (TextView) view.findViewById(R.id.country);
+            ImageView logoImg = (ImageView) view.findViewById(R.id.imageView2);
 
+//            Picasso.with(getApplicationContext())
+//                    .load("https://cms-assets.tutsplus.com/uploads/users/21/posts/19431/featured_image/CodeFeature.jpg")
+//                    .into(logoImg);
+
+            //Picasso.with(getApplicationContext()).load("https://ide-global.com/images/logo.png").into(logoImg);
+            Picasso.with(getApplicationContext()).load(eventList.get(position).getImageurl()).into(logoImg);
             Event event = eventList.get(position);
             eventName.setText(event.getEvent());
             date.setText(event.getDate());

@@ -9,6 +9,7 @@ public class Event {
     private String date;
     private String country;
     private String city;
+    private String imageurl;
 
     public String getEvent() {
         return event;
@@ -34,11 +35,13 @@ public class Event {
         this.country = country;
     }
 
-    public String getCity() {
-        return city;
-    }
+    public String getCity() {return city;}
 
     public void setCity(String city) {
         this.city = city;
     }
+
+    public String getImageurl() { return imageurl; }
+
+    public void setImageurl(String imageurl) {this.imageurl = imageurl;}
 }
