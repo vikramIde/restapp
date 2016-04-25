@@ -4,20 +4,17 @@ import android.content.Context;
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.AsyncHttpResponseHandler;
 import com.loopj.android.http.RequestParams;
-
 import cz.msebera.android.httpclient.HttpEntity;
 
 /**
  * Created by imomundo on 4/16/2016.
  */
+
 public class MyApiCall {
 
-    public static final String BASE_URL = "https://dev.iclock.in/";
-
+    public static final String BASE_URL = "https://Your Base URL Goes Here/";
 
     private static AsyncHttpClient client = new AsyncHttpClient();
-
-
 
     public static void get(String url, RequestParams params, AsyncHttpResponseHandler responseHandler) {
         client.get(getAbsoluteUrl(url), params, responseHandler);

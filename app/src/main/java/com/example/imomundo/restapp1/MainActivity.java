@@ -24,7 +24,6 @@ public class MainActivity extends AppCompatActivity {
     private TextView userName, password;
     private Button signIn;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         ActionBar actionBar = getSupportActionBar();
-        actionBar.setTitle("IDE Events");
+        actionBar.setTitle("My Events");
         return super.onCreateOptionsMenu(menu);
     }
 
@@ -54,8 +53,8 @@ public class MainActivity extends AppCompatActivity {
         RequestParams params = new RequestParams();
         params.put("username", userName.getText().toString());
         params.put("password", password.getText().toString());
-        params.put("client_id", "f3d259ddd3ed8ff3843839b");
-        params.put("client_secret", "4c7f6f8fa93d59c45502c0ae8c4a95b");
+        params.put("client_id", "YOUR_CLIENT_ID");
+        params.put("client_secret", "YOUR_CLIENT_SECRET");
         params.put("grant_type", "password");
 
         MyApiCall.post("oauth/access_token", params, new TextHttpResponseHandler() {
